@@ -29,6 +29,10 @@ Grannypinion
                 <label for="password"> Dein Passwort </label>
                 <input class="form-control" type="password" name="password" id="password">
             </div>
+            <div class="form-group">
+                <label for="profilePicture"> Profilbild </label>
+                <input class="form-control" type="file" name="profilePicture">
+            </div>
             <button type="submit" class="btn btn-primary"> Bestätigen </button>
         </form>
     </div>
@@ -49,6 +53,5 @@ Grannypinion
     </div>
 </div>
 @else
-
 @endif
 @endsection

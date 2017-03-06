@@ -10,14 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
+Route::get('/searchuser', 'UserController@search');
 Auth::routes();
 Route::get('/', function () {
 	return view('main');
 });
 
-Route::get('/{user}', 'UsersController@profile');
-Route::get('/{user}/feedback', 'UsersController@feedback');
+Route::get('/ranking', function () {
+	return view('ranking');
+});
+
+Route::get('/{user}', 'UserController@profile');
+Route::get('/{user}/feedback', 'UserController@feedback');
+Route::get('/{user}/message', 'MessageController@message');
+Route::get('/{user}/myconversations', 'ConversationController@view_conversations');
+Route::get('/conversation/{conversation}', 'ConversationController@view_messages');
+
+Route::post('/message', 'MessageController@store');
 
 Route::post('/feedback', 'ReviewsController@store');
-
-Route::get('/searchuser', 'UsersController@search');

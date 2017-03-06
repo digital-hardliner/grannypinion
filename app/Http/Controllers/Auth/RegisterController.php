@@ -5,11 +5,6 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Validator;
-use App\Mail\UserRegistered;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-use Validator;
 
 class RegisterController extends Controller {
 	use RegistersUsers;
@@ -26,12 +21,14 @@ class RegisterController extends Controller {
 	}
 
 	protected function create(array $data) {
+		$file = request()->file('profilePicture')->store('profilePictures');
 		return User::create([
 			'firstname' => $data['firstname'],
 			'lastname' => $data['lastname'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
 			'city' => $data['city'],
+			'profilePicture' => $file,
 			'verified' => false,
 		]);
 	}

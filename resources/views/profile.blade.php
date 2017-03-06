@@ -5,11 +5,13 @@ Grannypinion - Profil
 @if (!Auth::guest())
 @section('content')
 <h1> {{$user->firstname}} {{$user->lastname}} </h1>
+<img src="/storage/app/{{$user->profilePicture}}" style="width:20em;height:20em;">
+                            </img>
 <div class="panel-heading"> <h2> Bewertungen </h2> </div>
                 <div class="panel-body">
                     <ul class="list-group">
-                        @if(!empty(Auth::user()->reviews))
-                        @foreach( Auth::user()->reviews as $review )
+                        @if(!empty($user->reviews))
+                        @foreach( $user->reviews as $review )
                         <li class="list-group-item">
                            Gesamteindruck: {{$review->starsAverage}} von 10
                         </li>

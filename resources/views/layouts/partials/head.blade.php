@@ -8,6 +8,8 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+        <link href="css/app.css" rel="stylesheet">
+
         <link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
         <!-- important mandatory libraries -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>

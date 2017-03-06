@@ -1,18 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller {
-
-	public function feedback(User $user) {
-		return view('feedback', compact('user'));
-	}
-
-	public function profile(User $user) {
-		return view('profile', compact('user'));
-	}
+class UserController extends Controller {
 
 	public function search(Request $request) {
 		$users = User::all();
@@ -48,5 +41,15 @@ class UsersController extends Controller {
 		} else {
 			return view('noResult', compact('request'));
 		}
+
 	}
+
+	public function feedback(User $user) {
+		return view('feedback', compact('user'));
+	}
+
+	public function profile(User $user) {
+		return view('profile', compact('user'));
+	}
+
 }

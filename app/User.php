@@ -12,7 +12,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	use Authenticatable, CanResetPassword;
 
 	protected $fillable = [
-		'firstname', 'lastname', 'email', 'password', 'city', 'verified',
+		'firstname', 'lastname', 'email', 'password', 'city', 'verified', 'profilePicture',
 	];
 
 	protected $hidden = [
@@ -21,5 +21,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function reviews() {
 		return $this->hasMany(Review::class);
+	}
+
+	public function conversations() {
+		return $this->hasMany(Conversation::class);
 	}
 }
